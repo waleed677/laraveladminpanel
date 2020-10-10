@@ -77,9 +77,11 @@ class filesController extends Controller
 
     function deleteCategory($id)
     {
-        $data = DB::table('category')
-            ->where('c_id', '=', $id)
-            ->delete();
+        $query = "DELETE category,files FROM category
+                 LEFT JOIN files
+                 ON category.c_id = files.c_id
+                 WHERE category.c_id = '$id'";
+        DB::statement($query);
         return redirect('addCategory');
     }
 

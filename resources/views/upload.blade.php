@@ -55,7 +55,7 @@
                             <option value="">Select Category</option>
                             <option value="Audio">Audio</option>
                             <option value="Image">Image</option>
-                            <option value="Other">Other</option>
+
                         </select>
                     </div>
 

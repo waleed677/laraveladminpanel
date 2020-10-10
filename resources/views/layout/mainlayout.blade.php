@@ -27,7 +27,7 @@
             <div id="content">
                 <div class="container-fluid">
 
-                    @include('layout.partials.header')
+                    {{-- @include('layout.partials.header') --}}
 
                     @yield('content')
 

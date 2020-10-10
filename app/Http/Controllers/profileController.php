@@ -62,8 +62,4 @@ class profileController extends Controller
 
         return redirect('profile')->with('message', $message);
     }
-
-    function changePassword(Request $request)
-    {
-    }
 }

@@ -42,7 +42,7 @@ class filesController extends Controller
 
     function upload(Request $request)
     {
-        $path = "uploadedFiles";
+        $path = "public/files";
         if ($request->submit == 'Upload') {
             $request->validate([
                 'title' => 'required|min:4',
@@ -52,9 +52,11 @@ class filesController extends Controller
             ]);
 
             $title = $request->get('title');
+            $tit = explode(' ', $title);
+            $imageTitle = join("_", $tit);
             $category = $request->get('category');
             $type = $request->get('type');
-            $file = $request->file('file')->storeAs('uploadedFiles', $title . '.' . $request->file('file')->extension());
+            $file = $request->file('file')->storeAs($path, $imageTitle . '.' . $request->file('file')->extension());
 
             DB::table('files')->insert([
                 'f_title' => $title,
@@ -107,7 +109,7 @@ class filesController extends Controller
 
     function update(Request $request)
     {
-
+        $path = "public/files";
         $request->validate([
             'title' => 'min:4',
         ]);
@@ -122,7 +124,7 @@ class filesController extends Controller
 
         if ($request->file('file') != "") {
             echo "here";
-            $file = $request->file('file')->storeAs('uploadedFiles',  $imageTitle . '.' . $request->file('file')->extension());
+            $file = $request->file('file')->storeAs($path,  $imageTitle . '.' . $request->file('file')->extension());
         } else {
             echo "here2";
             $file = $request->get('fileValue');

@@ -60,9 +60,9 @@
                         </select>
                     </div>
 
-                    {{-- @if($data->f_type =='Image')
-                <img src="{{asset('uploadedFiles/'.$data->location)}}"  alt="{{ $data->location }}"/>
-                    @endif --}}
+                    @if($data->f_type =='Image')
+                <img src="{{ asset('/public/'.$data->location)}}"  alt="{{ $data->location }}"/>
+                    @endif
 
 
                     <div class="form-group col-md-6">

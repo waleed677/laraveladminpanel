@@ -133,7 +133,7 @@ class filesController extends Controller
         $data = array(
             'f_title' => $title,
             'f_type'  => $type,
-            'location' => $file,
+            'location' => $imageTitle,
             'c_id' => $category,
             'date' => now()
         );

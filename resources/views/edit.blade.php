@@ -61,7 +61,7 @@
                     </div>
 
                     @if($data->f_type =='Image')
-                <img src="{{ asset('/storage/files/'.$data->location)}}"  alt="{{ $data->location }}"/>
+                <img src="{{ asset('storage/'.$data->location)}}"  alt="{{ $data->location }}"/>
                     @endif
 
 
